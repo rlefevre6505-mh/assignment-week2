@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+#fullscreen-container {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-rows: 1fr 2fr 18fr;
+  grid-template-columns: 2fr 3fr 2fr;
+  height: 100vh;
+  width: 100vw;
+  object-fit: contain;
+}
+
+#thumbnail-container {
+  display: flex;
+  gap: 5px;
+  justify-content: space-evenly;
+  border: 2px solid grey;
+  height: 80px;
+  width: 100%;
+  grid-row-start: 2;
+  grid-column-start: 2;
+  object-fit: contain;
+}
+
+img {
+  max-height: 100%;
+  width: auto;
+}
+
+.thumbnail {
+  border: 3px solid rgb(54, 5, 99);
+}
