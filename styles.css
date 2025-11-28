@@ -3,6 +3,14 @@
   border: 0;
   box-sizing: border-box;
 }
+/* 
+main {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-rows: 2fr 3fr 36fr;
+  grid-template-columns: 1fr 3fr 1fr;
+} */
 
 #fullscreen-container {
   height: 100vh;
@@ -10,6 +18,10 @@
   display: grid;
   grid-template-rows: 1fr 2fr 18fr;
   grid-template-columns: 2fr 3fr 2fr;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 4;
   height: 100vh;
   width: 100vw;
   object-fit: contain;
@@ -24,6 +36,8 @@
   width: 100%;
   grid-row-start: 2;
   grid-column-start: 2;
+  grid-row-end: 3;
+  grid-column-end: 3;
   object-fit: contain;
 }
 
