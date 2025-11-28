@@ -32,6 +32,16 @@ const imageData = [
     imageSRC: "images/hares.jpg",
     imageAlt: "3 hares in the snow",
   },
+  {
+    imageName: "horses",
+    imageSRC: "images/horses.jpg",
+    imageAlt: "horses galloping infront of a sunset",
+  },
+  {
+    imageName: "kingfisher_and_wagtail",
+    imageSRC: "images/kingfisher_and_wagtail.jpg",
+    imageAlt: "a kingfisher perched on a branch and a pied wagtail in flight",
+  },
 ];
 
 //2. create thumbnail images:
@@ -77,3 +87,22 @@ function createFullscreenImage(i) {
 //call createThumbnails function
 
 createThumbnails();
+
+const leftArrow = document.getElementById("arrow-left");
+const rightArrow = document.getElementById("arrow-right");
+
+// rightArrow.addEventListener("click", function () {
+//   console.log("right arrow click");
+//   thumbnailContainer.scroll({
+//     right: +10,
+//     behavior: "smooth",
+//   });
+// });
+
+// leftArrow.addEventListener("click", function () {
+//   console.log("left arrow click");
+//   thumbnailContainer.scroll({
+//     left: +30,
+//     behavior: "smooth",
+//   });
+// });
