@@ -4,8 +4,13 @@
 const imageData = [
   {
     imageName: "dolphins",
-    imageSRC: "images/dolphins.jpg",
+    imageSRC: "images/dolphins.webp",
     imageAlt: "Dolphins swimming in the ocean",
+  },
+  {
+    imageName: "fox",
+    imageSRC: "images/fox.jpg",
+    imageAlt: "A small fox surrounded by bluebells",
   },
   {
     imageName: "humpback",
@@ -23,8 +28,18 @@ const imageData = [
     imageAlt: "a prancihg deer in an open field",
   },
   {
+    imageName: "elephant",
+    imageSRC: "images/elephant.webp",
+    imageAlt: "A bull elephant in Africa",
+  },
+  {
+    imageName: "turtle",
+    imageSRC: "images/turtle.webp",
+    imageAlt: "A turtle in the sea",
+  },
+  {
     imageName: "finch",
-    imageSRC: "images/finch.jpg",
+    imageSRC: "images/finch.webp",
     imageAlt: "a brown finch perched on a branch",
   },
   {
@@ -33,8 +48,18 @@ const imageData = [
     imageAlt: "3 hares in the snow",
   },
   {
+    imageName: "Zebra",
+    imageSRC: "images/zebra.webp",
+    imageAlt: "A heard if zebra in long grass",
+  },
+  {
+    imageName: "racoon",
+    imageSRC: "images/racoon.webp",
+    imageAlt: "A baby racoon walking on grass",
+  },
+  {
     imageName: "horses",
-    imageSRC: "images/horses.jpg",
+    imageSRC: "images/horses.webp",
     imageAlt: "horses galloping infront of a sunset",
   },
   {
