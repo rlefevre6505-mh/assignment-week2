@@ -135,6 +135,18 @@ function createThumbnails(i) {
 
 createThumbnails();
 
+function initialFullscreenImage(i) {
+  const fullscreenImage = document.createElement("img");
+  fullscreenContainer.innerHTML = null;
+  fullscreenImage.src = imageData[0].imageSRC;
+  fullscreenImage.alt = imageData[0].imageAlt;
+  fullscreenImage.id = 0;
+  fullscreenImage.classList.add("fullscreenImage");
+  fullscreenContainer.appendChild(fullscreenImage);
+}
+
+initialFullscreenImage();
+
 function createFullscreenImage(i) {
   const fullscreenImage = document.createElement("img");
   fullscreenContainer.innerHTML = null;
@@ -145,24 +157,32 @@ function createFullscreenImage(i) {
   fullscreenContainer.appendChild(fullscreenImage);
 }
 
-// window.addEventListener("keydown", function (event) {
-//   if ((event.code = 39)) {
-// const currentPhoto = document.querySelector(".fullscreenImage");
-// const currentIndexString = currentPhoto.id;
-// const currentIndexInt = parseInt(currentIndexString);
-// console.log(currentIndexInt);
-// fullscreenContainer.innerHTML = null;
-// const fullscreenImage = document.createElement("img");
-// fullscreenImage.src = imageData[currentIndexInt + 1].imageSRC;
-// fullscreenImage.alt = imageData[currentIndexInt + 1].imageAlt;
-// fullscreenImage.id = currentIndexInt + 1;
-// fullscreenImage.classList.add("fullscreenImage");
-// fullscreenContainer.appendChild(fullscreenImage);
-// } else if ((event.code = 39)) {
-//
-//function to scroll to previous image
-//
-//   } else {
-//     console.log("fail");
-//   }
-// });
+window.addEventListener("keydown", function (event) {
+  const currentPhoto = document.querySelector(".fullscreenImage");
+  const currentIndexString = currentPhoto.id;
+  const currentIndexInt = parseInt(currentIndexString);
+  if (event.key === "ArrowRight") {
+    if (currentIndexInt === imageData.length - 1) {
+    } else {
+      fullscreenContainer.innerHTML = null;
+      const fullscreenImage = document.createElement("img");
+      fullscreenImage.src = imageData[currentIndexInt + 1].imageSRC;
+      fullscreenImage.alt = imageData[currentIndexInt + 1].imageAlt;
+      fullscreenImage.id = currentIndexInt + 1;
+      fullscreenImage.classList.add("fullscreenImage");
+      fullscreenContainer.appendChild(fullscreenImage);
+    }
+  } else if (event.key === "ArrowLeft")
+    if (currentIndexInt === 0) {
+    } else {
+      fullscreenContainer.innerHTML = null;
+      const fullscreenImage = document.createElement("img");
+      fullscreenImage.src = imageData[currentIndexInt - 1].imageSRC;
+      fullscreenImage.alt = imageData[currentIndexInt - 1].imageAlt;
+      fullscreenImage.id = currentIndexInt - 1;
+      fullscreenImage.classList.add("fullscreenImage");
+      fullscreenContainer.appendChild(fullscreenImage);
+    }
+  else {
+  }
+});

@@ -34,7 +34,6 @@ body {
   display: flex;
   gap: 5px;
   height: 80px;
-  /* max-width: 40vw; */
   grid-row-start: 2;
   grid-column-start: 3;
   grid-row-end: 3;
@@ -47,7 +46,8 @@ body {
   scrollbar-color: rgba(255, 255, 255, 0.99) rgba(255, 255, 255, 0.2);
   scrollbar-width: thin;
 }
-x img {
+
+img {
   max-height: 100vh;
   width: auto;
   object-fit: cover;
@@ -97,5 +97,27 @@ x img {
 
   #thumbnail-container::-webkit-scrollbar {
     display: none;
+  }
+}
+
+h1 {
+  z-index: 1;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(252, 246, 237);
+  text-shadow: #101010 1px 10px 15px;
+  position: absolute;
+  top: 30%;
+  left: 34%;
+  text-align: center;
+  width: 32vw;
+  animation: fade 3s;
+  animation-fill-mode: forwards;
+  animation-delay: 8s;
+}
+
+@keyframes fade {
+  100% {
+    opacity: 0;
+    animation-delay: 5s;
   }
 }
