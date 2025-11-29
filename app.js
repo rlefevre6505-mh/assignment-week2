@@ -4,130 +4,165 @@
 const imageData = [
   {
     imageName: "dolphins",
-    imageSRC: "images/dolphins.webp",
+    imageSRC: "./images/dolphins.webp",
     imageAlt: "Dolphins swimming in the ocean",
+    class: "photo",
+  },
+  {
+    imageName: "humming bord",
+    imageSRC: "./images/humming_bird.webp",
+    imageAlt: "a green and purple humming bird",
+    class: "photo",
   },
   {
     imageName: "fox",
-    imageSRC: "images/fox.jpg",
+    imageSRC: "./images/fox.jpg",
     imageAlt: "A small fox surrounded by bluebells",
+    class: "photo",
   },
   {
     imageName: "humpback",
-    imageSRC: "images/humpback.jpg",
+    imageSRC: "./images/humpback.jpg",
     imageAlt: "A whale breaching the ocean surface",
+    class: "photo",
+  },
+  {
+    imageName: "red squirrel",
+    imageSRC: "./images/red_squirrel.webp",
+    imageAlt: "A red squirrel, lit brightly in front of a dark background",
+    class: "photo",
+  },
+  {
+    imageName: "penguins",
+    imageSRC: "./images/penguins.webp",
+    imageAlt: "penguins swimming and leaping from the sea",
+    class: "photo",
   },
   {
     imageName: "heron",
-    imageSRC: "images/heron.jpg",
+    imageSRC: "./images/heron.jpg",
     imageAlt: "A heron flying over water",
+    class: "photo",
   },
   {
     imageName: "deer",
-    imageSRC: "images/deer.jpg",
+    imageSRC: "./images/deer.jpg",
     imageAlt: "a prancihg deer in an open field",
+    class: "photo",
   },
   {
     imageName: "elephant",
-    imageSRC: "images/elephant.webp",
+    imageSRC: "./images/elephant.webp",
     imageAlt: "A bull elephant in Africa",
+    class: "photo",
+  },
+  {
+    imageName: "elk",
+    imageSRC: "./images/elk.webp",
+    imageAlt: "a large male elk, stood on a road",
+    class: "photo",
   },
   {
     imageName: "turtle",
-    imageSRC: "images/turtle.webp",
+    imageSRC: "./images/turtle.webp",
     imageAlt: "A turtle in the sea",
+    class: "photo",
   },
   {
     imageName: "finch",
-    imageSRC: "images/finch.webp",
+    imageSRC: "./images/finch.webp",
     imageAlt: "a brown finch perched on a branch",
+    class: "photo",
   },
   {
     imageName: "hares",
-    imageSRC: "images/hares.jpg",
+    imageSRC: "./images/hares.jpg",
     imageAlt: "3 hares in the snow",
+    class: "photo",
+  },
+  {
+    imageName: "lizard",
+    imageSRC: "./images/lizard.webp",
+    imageAlt: "A small green lizard, sat on a fence",
+    class: "photo",
   },
   {
     imageName: "Zebra",
-    imageSRC: "images/zebra.webp",
+    imageSRC: "./images/zebra.webp",
     imageAlt: "A heard if zebra in long grass",
+    class: "photo",
   },
   {
     imageName: "racoon",
-    imageSRC: "images/racoon.webp",
+    imageSRC: "./images/racoon.webp",
     imageAlt: "A baby racoon walking on grass",
+    class: "photo",
   },
   {
     imageName: "horses",
-    imageSRC: "images/horses.webp",
+    imageSRC: "./images/horses.webp",
     imageAlt: "horses galloping infront of a sunset",
+    class: "photo",
+  },
+  {
+    imageName: "arctic fox",
+    imageSRC: "./images/arctic_fox.jpg",
+    imageAlt: "A small fox surrounded by bluebells",
+    class: "photo",
   },
   {
     imageName: "kingfisher_and_wagtail",
-    imageSRC: "images/kingfisher_and_wagtail.jpg",
+    imageSRC: "./images/kingfisher_and_wagtail.jpg",
     imageAlt: "a kingfisher perched on a branch and a pied wagtail in flight",
+    class: "photo",
   },
 ];
 
-//2. create thumbnail images:
-//select DOM element (thumbnail container) to contain thumbnails
-let thumbnailContainer = document.getElementById("thumbnail-container");
-let fullscreenContainer = document.getElementById("fullscreen-container");
-//this is repetative, so a for loop (for of/each?) can be used
-//the loop task is to create an img elemt and to update the src and alt propertiers, to match those in the array (parameters)
-//give each img a class name
+const thumbnailContainer = document.getElementById("thumbnail-container");
+const fullscreenContainer = document.getElementById("fullscreen-container");
 
 function createThumbnails(i) {
   for (let i = 0; i < imageData.length; i++) {
     const thumb = document.createElement("img");
     thumb.src = imageData[i].imageSRC;
     thumb.alt = imageData[i].imageAlt;
-    thumb.classList.add("thumbnail");
+    thumb.classList.add = imageData[i].class;
     thumb.id = [i];
     thumbnailContainer.appendChild(thumb);
     thumb.addEventListener("click", createFullscreenImage);
   }
 }
 
-//add event listener to each img. the event handler is the function I write to create the fullscreen images
+createThumbnails();
 
-//3. create fullscreen images:
-//this is the event handler
-//select the fullscreen container
-//delete current fullscreen image (fullscreenConatiner.innerHTML="" or null)
-//create image, update values (properties)
-//add classname so it can be styled to be fullscreen
-//appent to container
 function createFullscreenImage(i) {
-  console.log("thumb clicked!");
   const fullscreenImage = document.createElement("img");
   fullscreenContainer.innerHTML = null;
   fullscreenImage.src = imageData[this.id].imageSRC;
   fullscreenImage.alt = imageData[this.id].imageAlt;
-  fullscreenContainer.classList.add("fullscreenImage");
+  fullscreenImage.id = this.id;
+  fullscreenImage.classList.add("fullscreenImage");
   fullscreenContainer.appendChild(fullscreenImage);
 }
 
-//add the createFullscreenImage function as the event handler of the above event
-//call createThumbnails function
-
-createThumbnails();
-
-const leftArrow = document.getElementById("arrow-left");
-const rightArrow = document.getElementById("arrow-right");
-
-// rightArrow.addEventListener("click", function () {
-//   console.log("right arrow click");
-//   thumbnailContainer.scroll({
-//     right: +10,
-//     behavior: "smooth",
-//   });
-// });
-
-// leftArrow.addEventListener("click", function () {
-//   console.log("left arrow click");
-//   thumbnailContainer.scroll({
-//     left: +30,
-//     behavior: "smooth",
-//   });
+// window.addEventListener("keydown", function (event) {
+//   if ((event.code = 39)) {
+// const currentPhoto = document.querySelector(".fullscreenImage");
+// const currentIndexString = currentPhoto.id;
+// const currentIndexInt = parseInt(currentIndexString);
+// console.log(currentIndexInt);
+// fullscreenContainer.innerHTML = null;
+// const fullscreenImage = document.createElement("img");
+// fullscreenImage.src = imageData[currentIndexInt + 1].imageSRC;
+// fullscreenImage.alt = imageData[currentIndexInt + 1].imageAlt;
+// fullscreenImage.id = currentIndexInt + 1;
+// fullscreenImage.classList.add("fullscreenImage");
+// fullscreenContainer.appendChild(fullscreenImage);
+// } else if ((event.code = 39)) {
+//
+//function to scroll to previous image
+//
+//   } else {
+//     console.log("fail");
+//   }
 // });

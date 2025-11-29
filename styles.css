@@ -34,36 +34,20 @@ body {
   display: flex;
   gap: 5px;
   height: 80px;
-  width: 50vw;
+  /* max-width: 40vw; */
   grid-row-start: 2;
   grid-column-start: 3;
   grid-row-end: 3;
   grid-column-end: 3;
   object-fit: contain;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.2);
   padding: 5px 5px 5px 5px;
   overflow-x: auto;
   scroll-snap-type: mandatory x;
-  scrollbar-color: rgb(158, 154, 154) rgba(255, 255, 255, 0.5);
+  scrollbar-color: rgba(255, 255, 255, 0.99) rgba(255, 255, 255, 0.2);
   scrollbar-width: thin;
 }
-
-/* #thumbnail-container::scroll-button(left) {
-  z-index: 2;
-  content: "<";
-  background-color: coral;
-  font-size: 4rem;
-  color: lightgreen;
-  height: 50px;
-  width: 50px;
-  border-radius: 15px;
-} */
-
-/* #thumbnail-container > img {
-  scroll-snap-align: start;
-} */
-
-img {
+x img {
   max-height: 100vh;
   width: auto;
   object-fit: cover;
@@ -75,33 +59,9 @@ img {
   min-height: 100vh;
 }
 
-/* #arrow-left {
-  z-index: 1;
-  width: 0;
-  height: 0;
-  border-top: 38px solid transparent;
-  border-right: 40px solid rgba(255, 255, 255, 0.5);
-  border-bottom: 38px solid transparent;
-  grid-row-start: 2;
-  grid-column-start: 2;
-  grid-row-end: 3;
-  grid-row-end: 3;
-  margin-right: 5px;
-  justify-self: end;
+#thumbnail-container > img:hover {
+  box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.6);
 }
-
-#arrow-right {
-  z-index: 1;
-  width: 0;
-  height: 0;
-  border-top: 38px solid transparent;
-  border-left: 40px solid rgba(255, 255, 255, 0.5);
-  border-bottom: 38px solid transparent;
-  grid-row-start: 2;
-  grid-column-start: 4;
-  grid-row-end: 3;
-  grid-column-end: 5;
-  margin-left: 5px; }*/
 
 @media (max-width: 600px) {
   #thumbnail-container {
@@ -110,6 +70,16 @@ img {
     position: absolute;
     bottom: 0;
     background-color: rgba(74, 87, 97, 0.7);
+  }
+
+  #thumbnail-container::-webkit-scrollbar {
+    display: none;
+  }
+  #thumbnail-container {
+    scrollbar-width: none;
+  }
+  #thumbnail-container {
+    -ms-overflow-style: none;
   }
 
   #fullscreen-container {
