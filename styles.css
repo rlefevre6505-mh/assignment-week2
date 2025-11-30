@@ -83,38 +83,36 @@ h1 {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
   #thumbnail-container {
     height: 21vh;
     width: 100vw;
     position: absolute;
     bottom: 0;
     background-color: rgba(74, 87, 97, 0.7);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
   #thumbnail-container::-webkit-scrollbar {
     display: none;
   }
-  #thumbnail-container {
-    scrollbar-width: none;
-  }
-  #thumbnail-container {
-    -ms-overflow-style: none;
-  }
 
   #fullscreen-container {
     height: auto;
     grid-row-start: 1;
-    grid-row-end: 4;
+    grid-row-end: -1;
     grid-column-start: 1;
-    grid-column-end: 4;
+    grid-column-end: -1;
   }
 
   #fullscreen-container > img {
     object-fit: contain;
     margin-top: -10vh;
   }
+
   h1 {
+    font-size: 0.1rem;
     color: black;
     z-index: -2;
   }
